@@ -11,6 +11,7 @@ import threading
 import eventlet.wsgi
 import numpy as np
 import pandas as pd
+import configparser
 
 from warnings import simplefilter 
 simplefilter(action='ignore', category=FutureWarning)
@@ -65,8 +66,13 @@ def send_control(action, pos):
         })
 
 def socket_run():
+    config = configparser.ConfigParser()
+    config.read('C:\\Users\\Msi\\Documents\\FSoft_QAI\\RL_Tank\\game_server.cfg')
+    address = config.get('SOCKET', 'SOCKET_ANDDRESS')  
+    port = int(config.get('SOCKET', 'SOCKET_PORT'))
+    print(address, port)
     # deploy as an eventlet WSGI server
-    eventlet.wsgi.server(eventlet.listen(('', 4567)), app)
+    eventlet.wsgi.server(eventlet.listen((address, port)), app)
 
 def predict():
     # load json and create model

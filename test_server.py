@@ -1,15 +1,10 @@
-import argparse
-import base64
-from datetime import datetime
-import os
-import shutil
-import numpy as np
 import socketio
 import eventlet
+import configparser
 import eventlet.wsgi
-from PIL import Image
+
 from flask import Flask
-from io import BytesIO
+
 
 
 #initialize our server
@@ -46,8 +41,12 @@ def send_control(action, pos):
 
 
 if __name__ == '__main__':
+    config = configparser.ConfigParser()
+    config.read('./game_server.cfg')
+    
     # wrap Flask application with engineio's middleware
     app = socketio.Middleware(sio, app)
-
+    address = config.get('SOCKET', 'SOCKET_ANDDRESS')  
+    port = int(config.get('SOCKET', 'SOCKET_PORT'))
     # deploy as an eventlet WSGI server
-    eventlet.wsgi.server(eventlet.listen(('', 4567)), app)
+    eventlet.wsgi.server(eventlet.listen((address, port)), app)

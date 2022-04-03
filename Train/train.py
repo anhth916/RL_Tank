@@ -11,6 +11,7 @@ import threading
 import eventlet.wsgi
 import numpy as np
 import pandas as pd
+import configparser
 
 
 from PIL import Image
@@ -57,10 +58,14 @@ def send_control(action, pos):
         })
 
 def socket_run():
+    config = configparser.ConfigParser()
+    config.read('C:\\Users\\Msi\\Documents\\FSoft_QAI\\RL_Tank\\game_server.cfg')
+    address = config.get('SOCKET', 'SOCKET_ANDDRESS')  
+    port = int(config.get('SOCKET', 'SOCKET_PORT'))
     # wrap Flask application with engineio's middleware
     app = socketio.Middleware(sio, flask_app)
     # deploy as an eventlet WSGI server
-    eventlet.wsgi.server(eventlet.listen(('', 4567)), app)
+    eventlet.wsgi.server(eventlet.listen((address, port)), app)
 
 def train():
     # Create header for saving DQN learning file
