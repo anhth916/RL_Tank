@@ -4,6 +4,7 @@
 * [Introduction](#Introduction)
 * [Game Play](#Game-Play)
 * [Game Mode](#Game-Mode)
+* [Cấu trúc thư mục](#Cấu-trúc-thư-mục)
 * [Hướng dẫn chạy mã nguồn mở](#Hướng-dẫn-chạy-mã-nguồn-mở)
 
 ## Introduction
@@ -27,18 +28,45 @@
 ## Game Mode
 
 Game có 3 mode:
-* Training Mode: Chế độ sử dụng cho việc training model AI 
-* Autonomous Mode: Chế độ sử dụng cho việc test model AI
+* Player Mode: Chế độ cho phép người chơi điều khiển và trải nghiệm game
+* Autonomous Mode: Chế độ sử dụng cho việc training và testing model AI của bạn
 * Fight Mode: Chế độ PvP giữa các người chơi (được sử dụng khi thi đấu)
 
 <p align="center">
 <img src="./img/game_menu.png" width="640" height="360"/>
 </p>
 
-## Hướng dẫn chạy mã nguồn mở
+## Cấu trúc thư mục
 
 Cấu trúc thư mục:
 1. Thư mục Train: Chứa mã nguồn liên quan đến việc huấn luyện model AI
 2. Thư mục Predict: Chứa mã nguồn liên quan đến việc chạy thử model AI
 3. `game_server.cfg` : Config file chưa thông tin game
 4. `test_server.py` : Sử dụng để test server kết nối thành công hay không
+5. `requirements.txt` : Chứa requirements cần thiết để chạy mã nguồn mở
+
+## Hướng dẫn chạy mã nguồn mở
+
+BTC khuyến nghị các đội chơi sử dụng `python 3`<br>
+Đầu tiên chúng ta cần tạo môi trường python bằng cách sử dụng conda
+
+`$ conda create --name <env> --file <requirements.txt file>`
+
+Tiếp theo chúng ta sẽ khởi chạy môi trường vừa tạo
+
+`$ conda activate <env> `
+
+Hướng dẫn sử dụng train model
+
+1. `$ cd Train`
+2. `$ python train.py`
+3. Khi màn hình console `Waiting game start...` bạn hãy chạy game và chọn mode `Autonomous Mode`
+
+Hướng dẫn sử dụng predict model
+
+1. `$ cd Predict`
+2. `$ python predict.py`
+3. Khi màn hình console `Waiting game start...` bạn hãy chạy game và chọn mode `Autonomous Mode`
+
+
+
