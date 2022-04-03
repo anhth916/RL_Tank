@@ -24,4 +24,11 @@
 
 ## Game Mode
 
+<p align="center">
+<img src="./img/game_menu.jpg" width="640" height="360"/>
+</p>
+
+Game có 3 mode:
+* 
+
 
