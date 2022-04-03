@@ -69,4 +69,13 @@ Hướng dẫn sử dụng predict model
 3. Khi màn hình console `Waiting game start...` bạn hãy chạy game và chọn mode `Autonomous Mode`
 
 
+--------------------------
+
+Chi tiết về phần code và flow xử lý đã được mô tả chi tiết trong tài liệu BTC cung cấp cho các đội chơi.
+<br>
+Chúc các bạn có một trải nghiệm game thú vị.
+<br>
+Thân ái và Quyết thắng!
+<br>
+BTC Kursk 1943
 
