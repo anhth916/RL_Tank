@@ -3,6 +3,7 @@
 ## Summary
 * [Introduction](#Introduction)
 * [Game Play](#Game-Play)
+* [Game Mode](#Game-Mode)
 ## Introduction
 * Opensource học tăng cường của cuộc thi Kursk 1943 do Quy Nhơn AI tổ chức được Ban tổ chức cung cấp cho các đội chơi để hiểu thêm về kiến trúc, flow xử lý, phương thức giao tiếp giữa người chơi và môi trường game.
 * Opensource sử dụng thuật toán học tăng cường Deep Q Learning tuy nhiên BTC không yêu cầu các đội buộc phải sử dụng thuật toán học tăng cường mà các đội hoàn toàn có thể sử dụng các thuật toán khác để tham gia cuộc thi này.
@@ -21,5 +22,6 @@
 <img src="./img/gameplay.gif" width="640" height="360"/>
 </p>
 
+## Game Mode
 
 
