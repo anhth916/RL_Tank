@@ -8,7 +8,7 @@
 * Opensource được dựng trên học tăng cường tuy nhiên không BTC không yêu cầu các đội buộc phải sử dụng học tăng cường để tham gia mà các đội hoàn toàn có thể sử dụng các thuật toán khác để tham gia cuộc thi.
 ![Poster!](img/poster.jpg "Poster")
 ## Game Play
-
+![Gamplay!](img/gameplay.gif "Gamplay")
 
 
 
