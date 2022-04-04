@@ -47,14 +47,18 @@ Cấu trúc thư mục:
 
 ## Hướng dẫn chạy mã nguồn mở
 
-BTC khuyến nghị các đội chơi sử dụng `python 3`<br>
+BTC khuyến nghị các đội chơi sử dụng `python 3.7`<br>
 Đầu tiên chúng ta cần tạo môi trường python bằng cách sử dụng conda
 
-`$ conda create --name <env> --file <requirements.txt file>`
+`$ conda create --name <env> python=3.7`
 
 Tiếp theo chúng ta sẽ khởi chạy môi trường vừa tạo
 
 `$ conda activate <env> `
+
+Cuối cùng chúng ta sẽ cài đặt các thư viện yêu cầu cho môi trường vừa tạo
+
+`$ pip install -r requirements.txt`
 
 Hướng dẫn sử dụng train model
 
