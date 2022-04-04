@@ -102,7 +102,7 @@ def predict():
                         s = s_next
                         check_round_end = tankEnv.check_round_end()
                         if(check_round_end == True):
-                            time.sleep(6)
+                            time.sleep(3)
                     except Exception as e:
                         import traceback
                         traceback.print_exc()

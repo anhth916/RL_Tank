@@ -140,7 +140,7 @@ def train():
                         
                         if check_end == True:
                             print("Ket thuc episode ", episode_i, "!")
-                            time.sleep(6) #Sleep 6 second wait the next game
+                            time.sleep(3) #Sleep 3 second wait the next game
                             #If the episode ends, then go to the next episode
                             break
 
@@ -149,7 +149,7 @@ def train():
                         DQNAgent.target_train()  # Replace the learning weights for target model with soft replacement
                         #Save the DQN model
                         now = datetime.datetime.now() #Get the latest datetime
-                        DQNAgent.save_model("C:\\Users\\Msi\\Documents\\FSoft_QAI\\RaceToTheMoon\\Train\\SaveModel\\",
+                        DQNAgent.save_model("C:\\Users\\Msi\\Documents\\FSoft_QAI\\RL_Tank\\Train\\SaveModel\\",
                                             "DQNmodel_" + now.strftime("%Y%m%d-%H%M") + "_ep" + str(episode_i + 1))
                     
                     #Print the training information after the episode
