@@ -274,13 +274,17 @@ class TankEnv:
             #Type 2: Action = 0 : MOVE
             action = 0
             #0: Move up 2 box
-            pos = [playerPosX, playerPosY - 2]
+            if(act == 0):
+                pos = [playerPosX, playerPosY - 2]
             #1: Move back 2 box
-            pos = [playerPosX, playerPosY + 2]
+            elif(act == 1):
+                pos = [playerPosX, playerPosY + 2]
             #2: Move left 2 box
-            pos = [playerPosX - 2, playerPosY]
+            elif(act == 2):
+                pos = [playerPosX - 2, playerPosY]
             #3: Move right 2 box
-            pos = [playerPosX + 2, playerPosY]
+            elif(act == 3):
+                pos = [playerPosX + 2, playerPosY]
         return action, pos
 
     #Fuction save action and pos for server get action
