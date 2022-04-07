@@ -109,7 +109,7 @@ def train():
                         act = DQNAgent.act(s)  # Getting an action from the DQN model from the state (s)
                         action, pos = tankEnv.nor_action(act)  # Performing the action in order to obtain the new state
                         tankEnv.send_action(action, pos) #Send action to game
-                        time.sleep(0.1) #Sleep a litter bit
+                        time.sleep(0.2) #Sleep a litter bit
                         s_next = tankEnv.get_stage()  # Getting a new state
                         reward = tankEnv.get_reward()  # Getting a reward
                         print("Step game: ", step, "voi action: ", action, "va vi tri: ", pos)
@@ -135,7 +135,7 @@ def train():
                             pd.DataFrame(save_data).to_csv(f, encoding='utf-8', index=False, header=False)
 
                         if(check_round == True):
-                            time.sleep(6) #Wait next round
+                            time.sleep(3) #Wait next round
                             print("Next Round...")
                         
                         if check_end == True:
