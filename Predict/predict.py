@@ -96,7 +96,7 @@ def predict():
                         action, pos = tankEnv.nor_action(act)
                         print("next action : ", action, "with pos: ", pos)
                         tankEnv.send_action(action, pos) #Send mess to game environment
-                        time.sleep(0.1) #Sleep a litter bit
+                        time.sleep(0.2) #Sleep a litter bit
                         #Get next stage
                         s_next = tankEnv.get_stage()
                         s = s_next
