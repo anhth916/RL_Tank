@@ -28,12 +28,17 @@
 ## Game Mode
 
 Game có 3 mode:
-* Player Mode: Chế độ cho phép người chơi điều khiển và trải nghiệm game
 * Autonomous Mode: Chế độ sử dụng cho việc training và testing model AI của bạn
 * Fight Mode: Chế độ PvP giữa các người chơi (được sử dụng khi thi đấu)
 
 <p align="center">
 <img src="./img/game_menu.png" width="640" height="360"/>
+</p>
+
+Game có 3 map thi đấu:
+
+<p align="center">
+<img src="./img/Game-Map.png" width="640" height="360"/>
 </p>
 
 ## Cấu trúc thư mục
@@ -60,18 +65,27 @@ Cuối cùng chúng ta sẽ cài đặt các thư viện yêu cầu cho môi tr�
 
 `$ pip install -r requirements.txt`
 
+Để chạy game trước tiên chúng ta cần chạy server socket trước:
+
+`$ python run_server.py`
+
 Hướng dẫn sử dụng train model
 
 1. `$ cd Train`
 2. `$ python train.py`
-3. Khi màn hình console `Waiting game start...` bạn hãy chạy game và chọn mode `Autonomous Mode`
 
 Hướng dẫn sử dụng predict model
 
 1. `$ cd Predict`
 2. `$ python predict.py`
-3. Khi màn hình console `Waiting game start...` bạn hãy chạy game và chọn mode `Autonomous Mode`
 
+Tiếp theo đó chúng ra sẽ chạy game lauch và chọn mode `Autonomous Mode`
+
+Sau đó nhập địa chỉ socket vào màn hình để tiến hành kết nối vào game. Ví dụ `127.0.0.1:4567`
+
+<p align="center">
+<img src="./img/Server-Address.png" width="640" height="360"/>
+</p>
 
 --------------------------
 
