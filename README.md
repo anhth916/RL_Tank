@@ -72,12 +72,12 @@ Cuối cùng chúng ta sẽ cài đặt các thư viện yêu cầu cho môi tr�
 Tiếp theo đó chúng ta sẽ chạy code điều khiển. Sẽ có 2 loại code điều khiền là để train model và để predict model
 
 1. Hướng dẫn sử dụng train model
-`$ cd Train`
-`$ python train.py`
+* `$ cd Train`
+* `$ python train.py`
 
 2. Hướng dẫn sử dụng predict model
-`$ cd Predict`
-`$ python predict.py`
+* `$ cd Predict`
+* `$ python predict.py`
 
 Tiếp theo đó chúng ra sẽ chạy game lauch và chọn mode `Autonomous Mode`
 
