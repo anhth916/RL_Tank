@@ -69,22 +69,22 @@ Cuối cùng chúng ta sẽ cài đặt các thư viện yêu cầu cho môi tr�
 
 `$ python run_server.py`
 
-Hướng dẫn sử dụng train model
+Tiếp theo đó chúng ta sẽ chạy code điều khiển. Sẽ có 2 loại code điều khiền là để train model và để predict model
 
-1. `$ cd Train`
-2. `$ python train.py`
+1. Hướng dẫn sử dụng train model
+`$ cd Train`
+`$ python train.py`
 
-Hướng dẫn sử dụng predict model
-
-1. `$ cd Predict`
-2. `$ python predict.py`
+2. Hướng dẫn sử dụng predict model
+`$ cd Predict`
+`$ python predict.py`
 
 Tiếp theo đó chúng ra sẽ chạy game lauch và chọn mode `Autonomous Mode`
 
 Sau đó nhập địa chỉ socket vào màn hình để tiến hành kết nối vào game. Ví dụ `127.0.0.1:4567`
 
 <p align="center">
-<img src="./img/Server-Address.png" width="640" height="360"/>
+<img src="./img/Server_Address.png" width="640" height="360"/>
 </p>
 
 --------------------------
