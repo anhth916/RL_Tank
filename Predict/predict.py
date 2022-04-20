@@ -33,19 +33,27 @@ from TankEnv import TankEnv # A class of get and save stage send from game envir
 
 tankEnv = TankEnv()
 
-#initialize our server
-sio = socketio.Server()
-#our flask (web) app
-flask_app = Flask(__name__)
+#initialize our client
+sio = socketio.Client()
 
-#registering event handler for the server
-@sio.on('connect')
-def connect(sid, environ):
-    print("connect ", sid)
+#registering event handler for the client
+@sio.event
+def connect():
+    print("The tank is ready!!! Waiting game starting ...")
+
+
+@sio.event
+def connect_error(data):
+    print("The connection to game server failed!")
+
+
+@sio.event
+def disconnect():
+    print("Disconnect to game server.")
 
 # called every frame and transfer data from game
-@sio.on('telemetry_0')
-def telemetry(sid, data):
+@sio.on('radio_tank_1')
+def on_message(data):
     tankEnv.get_data(data)
     next_step = tankEnv.next_step()
     if next_step == True:
@@ -58,7 +66,7 @@ def telemetry(sid, data):
 def send_control(action, pos):
     print("Da goi den lenh nay", action, pos)
     sio.emit(
-        "control",
+        "radio_tank_1_reply",
         data={
             'action': action.__str__(),
             'pos_x': pos[0].__str__(),
@@ -67,12 +75,10 @@ def send_control(action, pos):
 
 def socket_run():
     config = configparser.ConfigParser()
-    config.read('C:\\Users\\Msi\\Documents\\FSoft_QAI\\RL_Tank\\game_server.cfg')
-    address = config.get('SOCKET', 'SOCKET_ANDDRESS')  
-    port = int(config.get('SOCKET', 'SOCKET_PORT'))
-    print(address, port)
-    # deploy as an eventlet WSGI server
-    eventlet.wsgi.server(eventlet.listen((address, port)), app)
+    config.read(r'C:\Users\Msi\Documents\FSoft_QAI\RL_Tank\game_server.cfg')
+    address = config.get('SOCKET', 'SOCKET_CLIENT_ANDDRESS')
+    port = config.get('SOCKET', 'SOCKET_PORT')
+    sio.connect(address + port)
 
 def predict():
     # load json and create model
@@ -126,7 +132,6 @@ def predict():
 
 if __name__ == '__main__':
     # wrap Flask application with engineio's middleware
-    app = socketio.Middleware(sio, flask_app)
     try:
         t = time.time()
         # creating thread

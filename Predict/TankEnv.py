@@ -159,6 +159,7 @@ class TankEnv:
             pass
         #Save map
         self.map2D = map
+        print(map)
         #Flattening the map matrix to a vector
         DQNState = map.flatten().tolist()
         # Add position and health of agent to the DQNState

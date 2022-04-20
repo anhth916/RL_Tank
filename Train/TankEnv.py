@@ -241,7 +241,7 @@ class TankEnv:
     def check_game_end(self):
         player = int(self.result.get("player"))
         enemy = int(self.result.get("enemy"))
-        if(player >= 5) or (enemy >= 5):
+        if(player >= 3) or (enemy >= 3):
             return True
         else:
             return False
@@ -251,9 +251,9 @@ class TankEnv:
         #0: PLAYING, 1: WIN, 2: LOSE
         player = int(self.result.get("player"))
         enemy = int(self.result.get("enemy"))
-        if player >= 5:
+        if player >= 3:
             return 1
-        elif enemy >= 5:
+        elif enemy >= 3:
             return 2
         else:
             return 0
